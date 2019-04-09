@@ -23,6 +23,27 @@ namespace Homework1
         public MainWindow()
         {
             InitializeComponent();
+            uxSubmit.IsEnabled = false;
+        }
+
+        private void uxName_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            UpdateSubmitButton();
+        }
+
+        private void uxPassword_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            UpdateSubmitButton();
+        }
+
+        public void UpdateSubmitButton()
+        {
+            if (uxName.Text.Length > 0
+                && uxPassword.Text.Length > 0)
+            {
+                uxSubmit.IsEnabled = true;
+            }
+            else uxSubmit.IsEnabled = false;
         }
     }
 }
