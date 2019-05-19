@@ -1,0 +1,23 @@
+﻿@model BirthdayCardGenerator.Models.BirthdayCard
+
+<!DOCTYPE html>
+
+@{
+    ViewBag.Title = "Birthday Card Generator";
+}
+@using (Html.BeginForm())
+{
+    <h2>Birthday Card Sent</h2>
+
+
+<body>
+    @Html.ValidationSummary()
+    <div>
+        <p>To: @Html.DisplayTextFor(t => t.To)</p>
+        <p>From: @Html.DisplayTextFor(t => t.From)</p>
+        <p>Message: @Html.DisplayTextFor(t => t.Message)</p>
+        <p>@Html.ActionLink("Create another Birthday Card", "CardGenerator", "Home")</p>
+
+    </div>
+</body>
+}
